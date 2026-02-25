@@ -1,17 +1,32 @@
-﻿#include <iostream>
+﻿#include<iostream>
 
 using namespace std;
 
-// int - 정수형 숫자
-// char - 문자인데 저장은 숫자
-// bool - Truen, False, 저장은 숫자
-// float - 실수, 0010101
-
-int main() // entry point
+int main()
 {
-	float A = 1.0f; // f를 뺄 경우 Double로 인식하게 됨.
+	// A -> 65, Mapping, Item -> 1 Mapping
+	// 2차원 배열을 사용하는 곳 -> 퍼즐 or 맵
 
-	cout << A;
-	
+	int Inventory[100] = { 0, };
+	int TotalPrice = 0;
+	int ProductPrice[100] = { 0, };
+	int MyCartCount = 0;
+
+	ProductPrice[MyCartCount] = 10000;
+	MyCartCount++;
+	ProductPrice[MyCartCount] = 11000;
+	MyCartCount++;
+	ProductPrice[MyCartCount] = 12000;
+	MyCartCount++;
+	ProductPrice[MyCartCount] = 13000;
+	MyCartCount++;
+
+
+	for (int i = 0; i < 100; i++)
+	{
+		TotalPrice += ProductPrice[i];
+	}
+
+	cout << TotalPrice << endl;
 	return 0;
 }
