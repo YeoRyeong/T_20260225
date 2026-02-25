@@ -1,54 +1,17 @@
-﻿#include<iostream>
-#include<conio.h> // 키보드
+﻿#include <iostream>
 
 using namespace std;
 
-int main()
+// int - 정수형 숫자
+// char - 문자인데 저장은 숫자
+// bool - Truen, False, 저장은 숫자
+// float - 실수, 0010101
+
+int main() // entry point
 {
-	int Map[10][10] = {
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-	};
+	float A = 1.0f; // f를 뺄 경우 Double로 인식하게 됨.
 
-	int PlayerX = 1;
-	int PlayerY = 1;
-
-	for (;;)
-	{
-		for (int Y = 0; Y < 10; Y++) 
-		{
-			for (int X = 0; X < 10; X++)
-			{
-				if (PlayerX == X && PlayerY == Y)
-				{
-					cout << "%";
-				}
-
-				else if (Map[Y][X] == 1)
-				{
-					cout << "#";
-				}
-				else if (Map[Y][X] == 0)
-				{
-					cout << " ";
-				}
-			}
-			cout << endl;
-		}
-
-		int Temp;
-		Temp = _getch();
-		PlayerX++;
-	}
-
-
+	cout << A;
+	
 	return 0;
 }
