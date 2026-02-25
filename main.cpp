@@ -30,7 +30,7 @@ int Remainder(int a, int b) // 나머지
 
 int main()
 {
-	int Number1; // 입력
+	int Number1;
 	int Number2;
 
 	cin >> Number1;
