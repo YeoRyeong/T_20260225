@@ -46,41 +46,32 @@ int main()
 			cout << endl;
 		}
 
+	
 		Temp = _getch(); // 아무 키나 누를 경우 이동
 		
-		for (int Y = 0; Y < 10; Y++)
+		if (Temp == 'w') // 위
 		{
-			for (int X = 0; X < 10; X++)
-			{
-				if (Map[Y][X] == 1) // 이동 가능 범위
-				{
-
-					// 대각선 이동을 하려면 else if 대신 if를 써야함.
-					if (Temp == 'w') // 아스키 코드 w를 눌러서 -Y값으로 이동
-					{
-						PlayerY--;
-					}
-
-					if (Temp == 'a') // 아스키 코드 a를 눌러서 -X값으로 이동
-					{
-						PlayerX--;
-					}
-
-					if (Temp == 's') // 아스키 코드 s를 눌러서 y값으로 이동
-					{
-						PlayerY++;
-					}
-
-					if (Temp == 'd') // 아스키 코드 d를 눌러서 X값으로 이동
-					{
-						PlayerX++;
-					}
-
-				}
-			}
-			cout << endl;
+			if (Map[PlayerY - 1][PlayerX] == 0) // 벽이 아닐 때만 이동
+				PlayerY--;
 		}
-		
+
+		if (Temp == 'a') // 왼쪽
+		{
+			if (Map[PlayerY][PlayerX - 1] == 0)
+				PlayerX--;
+		}
+
+		if (Temp == 's') // 아래
+		{
+			if (Map[PlayerY + 1][PlayerX] == 0)
+				PlayerY++;
+		}
+
+		if (Temp == 'd') // 오른쪽
+		{
+			if (Map[PlayerY][PlayerX + 1] == 0)
+				PlayerX++;
+		}
 
 		system("cls"); // 사용하면 효율적이지는 않지만 깔끔하게 보이도록 사용 위에 맵들을 지워서 변경된 것만 보여줌.
 	}
