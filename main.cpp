@@ -46,28 +46,39 @@ int main()
 			cout << endl;
 		}
 
+		Temp = _getch(); // 아무 키나 누를 경우 이동
 		
-		
-		
-		// 대각선 이동을 하려면 else if 대신 if를 써야함.
-		if (Temp == 'w') // 아스키 코드 w를 눌러서 -Y값으로 이동
+		for (int Y = 0; Y < 10; Y++)
 		{
-			PlayerY--;
-		}
+			for (int X = 0; X < 10; X++)
+			{
+				if (Map[Y][X] == 1) // 이동 가능 범위
+				{
 
-		if (Temp == 'a') // 아스키 코드 a를 눌러서 -X값으로 이동
-		{
-			PlayerX--;
-		}
+					// 대각선 이동을 하려면 else if 대신 if를 써야함.
+					if (Temp == 'w') // 아스키 코드 w를 눌러서 -Y값으로 이동
+					{
+						PlayerY--;
+					}
 
-		if (Temp == 's') // 아스키 코드 s를 눌러서 y값으로 이동
-		{
-			PlayerY++;
-		}
+					if (Temp == 'a') // 아스키 코드 a를 눌러서 -X값으로 이동
+					{
+						PlayerX--;
+					}
 
-		if (Temp == 'd') // 아스키 코드 d를 눌러서 X값으로 이동
-		{
-			PlayerX++;
+					if (Temp == 's') // 아스키 코드 s를 눌러서 y값으로 이동
+					{
+						PlayerY++;
+					}
+
+					if (Temp == 'd') // 아스키 코드 d를 눌러서 X값으로 이동
+					{
+						PlayerX++;
+					}
+
+				}
+			}
+			cout << endl;
 		}
 		
 
